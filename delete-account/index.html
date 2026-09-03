@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Delete Account — BagTrainer</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="page">
+  <a class="brand" href="/">
+    <div class="brand-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="var(--accent-ink)"/>
+      </svg>
+    </div>
+    <div class="brand-name">BAG<span class="lime">TRAINER</span></div>
+  </a>
+
+  <h1>Delete your account</h1>
+  <p class="lede">
+    Permanently remove your BagTrainer account and every workout, streak
+    and achievement backed up to it. This page works whether or not you
+    still have the app installed.
+  </p>
+
+  <div class="card">
+    <h2>From inside the app</h2>
+    <p>The fastest way, if you still have BagTrainer installed:</p>
+    <div class="steps">
+      <div class="step"><b>1.</b> Open BagTrainer and go to <b>Settings</b></div>
+      <div class="step"><b>2.</b> Under <b>Account</b>, tap <b>Delete Account</b></div>
+      <div class="step"><b>3.</b> Confirm — your account and cloud backup are erased immediately</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Without the app</h2>
+    <p>
+      No app? Enter the email address your account was signed in with and
+      we'll open a pre-filled request for you to send.
+    </p>
+
+    <div class="request-form">
+      <label for="account-email">Account email</label>
+      <div class="input-row">
+        <input type="email" id="account-email" placeholder="you@example.com" autocomplete="email" />
+        <button type="button" id="request-btn">Request deletion</button>
+      </div>
+      <p class="hint" id="form-hint">We'll open your email app with the request already written.</p>
+    </div>
+
+    <div class="timeline-note">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <p>Email requests are verified and processed within 30 days. In-app deletion is instant.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What gets deleted</h2>
+    <ul class="checklist">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        Your account and its link to Google Sign-In
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        Your workout history backed up to the cloud
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        Your streak, achievement and leaderboard records
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        Your display name and profile info
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    <a href="mailto:bagtrainerapp@gmail.com">Contact support</a> &middot; BagTrainer
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById("request-btn");
+    var input = document.getElementById("account-email");
+    var hint = document.getElementById("form-hint");
+
+    btn.addEventListener("click", function () {
+      var email = input.value.trim();
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+        hint.textContent = "Enter the email address your account was signed in with.";
+        hint.classList.add("error");
+        input.focus();
+        return;
+      }
+
+      hint.classList.remove("error");
+      hint.textContent = "We'll open your email app with the request already written.";
+
+      var subject = encodeURIComponent("Delete my BagTrainer account");
+      var body = encodeURIComponent(
+        "Please permanently delete my BagTrainer account and all associated data.\n\n" +
+        "Account email: " + email + "\n"
+      );
+
+      window.location.href = "mailto:bagtrainerapp@gmail.com?subject=" + subject + "&body=" + body;
+    });
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

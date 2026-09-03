@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #08101C;
+  --surface: #101827;
+  --surface-2: #172235;
+  --border: #253449;
+  --text: #FFFFFF;
+  --text-secondary: #8FA0B8;
+  --accent: #D3F51B;
+  --accent-ink: #0C1A2B;
+  --danger: #E2665A;
+  --danger-surface: rgba(226, 102, 90, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.brand-name {
+  font-family: "Anton", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.brand-name .lime {
+  color: var(--accent);
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  font-size: clamp(28px, 5.5vw, 38px);
+  line-height: 1.05;
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 32px;
+}
+
+h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 16px;
+  color: var(--accent);
+  margin: 32px 0 12px;
+}
+
+h2:first-of-type {
+  margin-top: 8px;
+}
+
+p, li {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0 0 14px;
+}
+
+.lede {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 56ch;
+}
+
+ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+strong {
+  color: var(--text);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 0 0 18px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.step {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14.5px;
+}
+
+.step b {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="email"] {
+  flex: 1 1 220px;
+  min-width: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--text);
+}
+
+input[type="email"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover {
+  filter: brightness(1.06);
+}
+
+.hint {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.hint.error {
+  color: var(--danger);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+}
+
+.checklist svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  width: 14px;
+  height: 14px;
+  color: var(--danger);
+}
+
+.timeline-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--danger-surface);
+  border: 1px solid rgba(226, 102, 90, 0.3);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 16px;
+}
+
+.timeline-note p {
+  color: var(--text);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.timeline-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 16px;
+  height: 16px;
+  color: var(--danger);
+}
+
+.hub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hub-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.hub-link:hover {
+  border-color: var(--accent);
+}
+
+.hub-link-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.hub-link-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.hub-link-arrow {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+footer {
+  margin-top: 44px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
