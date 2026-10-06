@@ -34,39 +34,16 @@
     <h2>Without the app</h2>
     <p>
       No app? Enter the email address your account was signed in with and
-      send us a deletion request.
+      we'll open a pre-filled request for you to send.
     </p>
 
-    <form class="support-form" data-support-form data-success-panel="delete-success" novalidate>
-      <div class="field">
-        <label for="account-email">Account email</label>
-        <input type="email" id="account-email" name="email" autocomplete="email" maxlength="254"
-               placeholder="you@example.com"
-               data-validate data-label="Account email" data-max="254" aria-describedby="account-email-error" />
-        <p class="field-error" id="account-email-error" hidden></p>
+    <div class="request-form">
+      <label for="account-email">Account email</label>
+      <div class="input-row">
+        <input type="email" id="account-email" placeholder="you@example.com" autocomplete="email" />
+        <button type="button" id="request-btn">Request deletion</button>
       </div>
-
-      <input type="hidden" name="category" value="Account deletion request" />
-      <input type="hidden" name="message" value="Please permanently delete my BagTrainer account and all associated data." />
-
-      <!-- Spam trap: hidden from people, filled in only by bots. -->
-      <div class="hp-field" aria-hidden="true">
-        <label for="delete-company">Company</label>
-        <input type="text" id="delete-company" name="_gotcha" tabindex="-1" autocomplete="off" />
-      </div>
-
-      <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
-
-      <button type="submit">Request deletion</button>
-
-      <noscript>
-        <p class="hint error">Please turn on JavaScript in your browser to send a deletion request.</p>
-      </noscript>
-    </form>
-
-    <div class="form-success" id="delete-success" tabindex="-1" hidden>
-      <h3>Request sent</h3>
-      <p>We've received your deletion request. We'll verify it and reply to the email address you entered.</p>
+      <p class="hint" id="form-hint">We'll open your email app with the request already written.</p>
     </div>
 
     <div class="timeline-note">
@@ -102,7 +79,44 @@
   </footer>
 </div>
 
-<script src="/assets/site-config.js"></script>
-<script src="/assets/support-form.js"></script>
+<script>
+  (function () {
+    var btn = document.getElementById("request-btn");
+    var input = document.getElementById("account-email");
+    var hint = document.getElementById("form-hint");
+
+    btn.addEventListener("click", function () {
+      var email = input.value.trim();
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+        hint.textContent = "Enter the email address your account was signed in with.";
+        hint.classList.add("error");
+        input.focus();
+        return;
+      }
+
+      hint.classList.remove("error");
+      hint.textContent = "We'll open your email app with the request already written.";
+
+      var subject = encodeURIComponent("Delete my BagTrainer account");
+      var body = encodeURIComponent(
+        "Please permanently delete my BagTrainer account and all associated data.\n\n" +
+        "Account email: " + email + "\n"
+      );
+
+      // Assembled here so the address is never shown on the page.
+      var to = ["bagtrainerapp", "gmail.com"].join("@");
+      window.location.href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
+    });
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  })();
+</script>
 </body>
 </html>

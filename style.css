@@ -329,151 +329,89 @@ button:disabled {
   font-size: 20px;
 }
 
-/* Support form */
+/* Support page */
 
-.support-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 6px;
-}
-
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (max-width: 560px) {
-  .field-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  min-width: 0;
-}
-
-.support-form input[type="text"],
-.support-form input[type="email"],
-.support-form select,
-.support-form textarea {
-  flex: 0 0 auto;
-  width: 100%;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 11px 13px;
-  font-size: 15px;
-  font-family: inherit;
-  color: var(--text);
-}
-
-.support-form select {
-  appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%),
-    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
-  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
-  background-size: 5px 5px;
-  background-repeat: no-repeat;
-  padding-right: 36px;
-}
-
-.support-form select option {
-  background: var(--surface-2);
-  color: var(--text);
-}
-
-.support-form textarea {
-  resize: vertical;
-  min-height: 140px;
-  line-height: 1.5;
-}
-
-.support-form ::placeholder {
-  color: #5f7089;
-}
-
-.support-form [aria-invalid="true"] {
-  border-color: var(--danger);
-}
-
-.support-form button[type="submit"] {
-  align-self: flex-start;
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 220px;
-  padding: 13px 22px;
+  margin-top: 6px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
   font-size: 15px;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  filter: brightness(1.06);
 }
 
 @media (max-width: 560px) {
-  .support-form button[type="submit"] {
-    align-self: stretch;
+  .contact-button {
+    display: flex;
+    width: 100%;
   }
 }
 
-.field-error {
-  margin: 0;
-  font-size: 12.5px;
-  color: var(--danger);
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.form-status {
-  margin: 0;
-  font-size: 13.5px;
-  border-radius: 10px;
-  padding: 11px 14px;
-}
-
-.form-status.is-error {
-  background: var(--danger-surface);
-  border: 1px solid rgba(226, 102, 90, 0.3);
-  color: var(--text);
-}
-
-.form-status.is-success {
-  background: rgba(211, 245, 27, 0.08);
-  border: 1px solid rgba(211, 245, 27, 0.35);
-  color: var(--text);
-}
-
-.hp-field {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.form-success {
-  background: rgba(211, 245, 27, 0.08);
-  border: 1px solid rgba(211, 245, 27, 0.35);
-  border-radius: 12px;
-  padding: 20px 22px;
-  outline: none;
-}
-
-.form-success h3 {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  font-size: 18px;
-  color: var(--accent);
-  margin: 0 0 8px;
-}
-
-.button-secondary {
-  background: transparent;
-  color: var(--text);
+.faq details {
+  background: var(--surface);
   border: 1px solid var(--border);
-  margin-top: 4px;
+  border-radius: 12px;
+  padding: 0 18px;
 }
 
-.button-secondary:hover {
-  border-color: var(--accent);
+.faq details[open] {
+  border-color: rgba(211, 245, 27, 0.45);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.faq details[open] summary::after {
+  content: "\2212";
+}
+
+.faq details p {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  margin: 0 0 16px;
+}
+
+.faq details p b {
+  color: var(--text);
+  font-weight: 600;
 }
 
 footer {

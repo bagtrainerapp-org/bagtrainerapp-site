@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Support — BagTrainer</title>
-<meta name="description" content="Get help with BagTrainer: app issues, subscriptions, sign-in, workouts and audio. Send the BagTrainer team a support request." />
+<meta name="description" content="Get help with BagTrainer: subscriptions, free trial, backups, workout audio and account deletion. Contact the BagTrainer support team." />
 <link rel="icon" href="/assets/icon.png" />
 <link rel="stylesheet" href="/style.css" />
 </head>
@@ -17,85 +17,86 @@
   <h1>Support</h1>
   <p class="lede">
     Something not working, a question about your subscription, or an idea
-    for the app? Send us a message and we'll reply to the email address
-    you give us.
+    for the app? Check the answers below or get in touch with us.
   </p>
 
   <div class="card">
     <h2>Contact support</h2>
+    <p>
+      Tap the button to write to us from your email app. Telling us your
+      phone model and what happened helps us fix things faster. We'll reply
+      to the address you write from.
+    </p>
+    <a class="contact-button" id="contact-support" href="#contact-support" data-mail-user="bagtrainerapp" data-mail-domain="gmail.com">
+      Contact Support
+    </a>
+    <noscript>
+      <p class="hint error">Please turn on JavaScript in your browser to use the Contact Support button.</p>
+    </noscript>
+  </div>
 
-    <form class="support-form" data-support-form data-success-panel="support-success" novalidate>
-      <div class="field-row">
-        <div class="field">
-          <label for="support-name">Name</label>
-          <input type="text" id="support-name" name="name" autocomplete="name" maxlength="100"
-                 data-validate data-label="Name" data-max="100" aria-describedby="support-name-error" />
-          <p class="field-error" id="support-name-error" hidden></p>
-        </div>
+  <h2>Frequently asked questions</h2>
 
-        <div class="field">
-          <label for="support-email">Email</label>
-          <input type="email" id="support-email" name="email" autocomplete="email" maxlength="254"
-                 placeholder="you@example.com"
-                 data-validate data-label="Email" data-max="254" aria-describedby="support-email-error" />
-          <p class="field-error" id="support-email-error" hidden></p>
-        </div>
-      </div>
+  <div class="faq">
+    <details>
+      <summary>How do I cancel or manage my subscription?</summary>
+      <p>
+        Subscriptions are billed and managed by the store you bought from.
+        On Android, open the Google Play Store, tap your profile picture, then
+        <b>Payments &amp; subscriptions</b> &rarr; <b>Subscriptions</b>. On iPhone,
+        open <b>Settings</b>, tap your name, then <b>Subscriptions</b>.
+        Deleting the app or your BagTrainer account does not cancel a
+        subscription.
+      </p>
+    </details>
 
-      <div class="field">
-        <label for="support-category">Issue type</label>
-        <select id="support-category" name="category" data-validate data-label="Issue type"
-                aria-describedby="support-category-error">
-          <option value="">Choose one…</option>
-          <option>App issue / bug</option>
-          <option>Subscription / billing</option>
-          <option>Account / sign-in</option>
-          <option>Workout / audio</option>
-          <option>Feature feedback</option>
-          <option>Other</option>
-        </select>
-        <p class="field-error" id="support-category-error" hidden></p>
-      </div>
+    <details>
+      <summary>How does the free trial work?</summary>
+      <p>
+        Eligible new subscribers can start a 7-day free trial. The app shows
+        the trial and the price before you confirm. If you cancel before the
+        trial ends, you won't be charged.
+      </p>
+    </details>
 
-      <div class="field">
-        <label for="support-message">Message</label>
-        <textarea id="support-message" name="message" rows="6" maxlength="5000"
-                  placeholder="Tell us what happened. Your phone model and app version help us fix bugs faster."
-                  data-validate data-label="Message" data-min="10" data-max="5000"
-                  aria-describedby="support-message-error"></textarea>
-        <p class="field-error" id="support-message-error" hidden></p>
-      </div>
+    <details>
+      <summary>I already paid. How do I get Pro back on a new phone?</summary>
+      <p>
+        Sign in to the same Google Play or Apple account you subscribed with,
+        then in BagTrainer go to <b>Menu</b> &rarr; <b>Subscription</b> and tap
+        <b>Restore Purchases</b>.
+      </p>
+    </details>
 
-      <!-- Spam trap: hidden from people, filled in only by bots. -->
-      <div class="hp-field" aria-hidden="true">
-        <label for="support-company">Company</label>
-        <input type="text" id="support-company" name="_gotcha" tabindex="-1" autocomplete="off" />
-      </div>
+    <details>
+      <summary>How do I back up my workouts and stats?</summary>
+      <p>
+        Go to <b>Menu</b> &rarr; <b>Settings</b> and sign in. Your progress is
+        then backed up and can be restored when you sign in on another device.
+        Without signing in, your progress stays only on your phone.
+      </p>
+    </details>
 
-      <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+    <details>
+      <summary>I can't hear the coach callouts.</summary>
+      <p>
+        Turn up your phone's media volume and check that your headphones or
+        Bluetooth speaker are connected. If the callouts still don't play,
+        contact support with your phone model and the workout you were running.
+      </p>
+    </details>
 
-      <button type="submit">Send Support Request</button>
-
-      <noscript>
-        <p class="hint error">Please turn on JavaScript in your browser to send a support request.</p>
-      </noscript>
-    </form>
-
-    <div class="form-success" id="support-success" tabindex="-1" hidden>
-      <h3>Request sent</h3>
-      <p>Thanks for getting in touch. We'll reply to the email address you gave us.</p>
-      <button type="button" class="button-secondary" data-send-another>Send another request</button>
-    </div>
+    <details>
+      <summary>How do I delete my account?</summary>
+      <p>
+        In the app, go to <b>Menu</b> &rarr; <b>Settings</b> &rarr; <b>Delete Account</b>.
+        If you no longer have the app, use our
+        <a href="/delete-account">account deletion page</a>.
+      </p>
+    </details>
   </div>
 
   <div class="hub-links">
-    <a class="hub-link" href="/delete-account">
-      <div>
-        <div class="hub-link-title">Delete your account</div>
-        <div class="hub-link-sub">Remove your account and backed-up data</div>
-      </div>
-      <span class="hub-link-arrow">&rsaquo;</span>
-    </a>
     <a class="hub-link" href="/privacy">
       <div>
         <div class="hub-link-title">Privacy Policy</div>
@@ -117,7 +118,6 @@
   </footer>
 </div>
 
-<script src="/assets/site-config.js"></script>
-<script src="/assets/support-form.js"></script>
+<script src="/assets/contact.js"></script>
 </body>
 </html>
