@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Support — BagTrainer</title>
+<meta name="description" content="Get help with BagTrainer: app issues, subscriptions, sign-in, workouts and audio. Send the BagTrainer team a support request." />
+<link rel="icon" href="/assets/icon.png" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="page">
+  <a class="brand" href="/">
+    <div class="brand-name">BAG<span class="lime">TRAINER</span></div>
+  </a>
+
+  <h1>Support</h1>
+  <p class="lede">
+    Something not working, a question about your subscription, or an idea
+    for the app? Send us a message and we'll reply to the email address
+    you give us.
+  </p>
+
+  <div class="card">
+    <h2>Contact support</h2>
+
+    <form class="support-form" data-support-form data-success-panel="support-success" novalidate>
+      <div class="field-row">
+        <div class="field">
+          <label for="support-name">Name</label>
+          <input type="text" id="support-name" name="name" autocomplete="name" maxlength="100"
+                 data-validate data-label="Name" data-max="100" aria-describedby="support-name-error" />
+          <p class="field-error" id="support-name-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="support-email">Email</label>
+          <input type="email" id="support-email" name="email" autocomplete="email" maxlength="254"
+                 placeholder="you@example.com"
+                 data-validate data-label="Email" data-max="254" aria-describedby="support-email-error" />
+          <p class="field-error" id="support-email-error" hidden></p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="support-category">Issue type</label>
+        <select id="support-category" name="category" data-validate data-label="Issue type"
+                aria-describedby="support-category-error">
+          <option value="">Choose one…</option>
+          <option>App issue / bug</option>
+          <option>Subscription / billing</option>
+          <option>Account / sign-in</option>
+          <option>Workout / audio</option>
+          <option>Feature feedback</option>
+          <option>Other</option>
+        </select>
+        <p class="field-error" id="support-category-error" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="support-message">Message</label>
+        <textarea id="support-message" name="message" rows="6" maxlength="5000"
+                  placeholder="Tell us what happened. Your phone model and app version help us fix bugs faster."
+                  data-validate data-label="Message" data-min="10" data-max="5000"
+                  aria-describedby="support-message-error"></textarea>
+        <p class="field-error" id="support-message-error" hidden></p>
+      </div>
+
+      <!-- Spam trap: hidden from people, filled in only by bots. -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="support-company">Company</label>
+        <input type="text" id="support-company" name="_gotcha" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+
+      <button type="submit">Send Support Request</button>
+
+      <noscript>
+        <p class="hint error">Please turn on JavaScript in your browser to send a support request.</p>
+      </noscript>
+    </form>
+
+    <div class="form-success" id="support-success" tabindex="-1" hidden>
+      <h3>Request sent</h3>
+      <p>Thanks for getting in touch. We'll reply to the email address you gave us.</p>
+      <button type="button" class="button-secondary" data-send-another>Send another request</button>
+    </div>
+  </div>
+
+  <div class="hub-links">
+    <a class="hub-link" href="/delete-account">
+      <div>
+        <div class="hub-link-title">Delete your account</div>
+        <div class="hub-link-sub">Remove your account and backed-up data</div>
+      </div>
+      <span class="hub-link-arrow">&rsaquo;</span>
+    </a>
+    <a class="hub-link" href="/privacy">
+      <div>
+        <div class="hub-link-title">Privacy Policy</div>
+        <div class="hub-link-sub">What BagTrainer stores and why</div>
+      </div>
+      <span class="hub-link-arrow">&rsaquo;</span>
+    </a>
+    <a class="hub-link" href="/terms">
+      <div>
+        <div class="hub-link-title">Terms of Use</div>
+        <div class="hub-link-sub">Subscriptions, billing and using the app</div>
+      </div>
+      <span class="hub-link-arrow">&rsaquo;</span>
+    </a>
+  </div>
+
+  <footer>
+    BagTrainer &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Use</a>
+  </footer>
+</div>
+
+<script src="/assets/site-config.js"></script>
+<script src="/assets/support-form.js"></script>
+</body>
+</html>
