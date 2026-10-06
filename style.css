@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -195,7 +199,10 @@ input[type="email"] {
   color: var(--text);
 }
 
-input[type="email"]:focus-visible {
+input[type="email"]:focus-visible,
+input[type="text"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
@@ -216,6 +223,12 @@ button {
 
 button:hover {
   filter: brightness(1.06);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+  filter: none;
 }
 
 .hint {
@@ -314,6 +327,91 @@ button:hover {
 .hub-link-arrow {
   color: var(--accent);
   font-size: 20px;
+}
+
+/* Support page */
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  margin-top: 6px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  filter: brightness(1.06);
+}
+
+@media (max-width: 560px) {
+  .contact-button {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 18px;
+}
+
+.faq details[open] {
+  border-color: rgba(211, 245, 27, 0.45);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.faq details[open] summary::after {
+  content: "\2212";
+}
+
+.faq details p {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  margin: 0 0 16px;
+}
+
+.faq details p b {
+  color: var(--text);
+  font-weight: 600;
 }
 
 footer {

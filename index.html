@@ -19,6 +19,7 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#screens">See it in action</a>
+      <a href="/support">Support</a>
       <a href="/privacy">Privacy</a>
     </div>
     <a class="nav-cta" href="#download">Coming Soon</a>
@@ -30,16 +31,23 @@
     <img src="/assets/hero.jpg" alt="" />
   </div>
   <div class="wrap hero-content">
-    <div class="eyebrow">14-Day Free Trial</div>
+    <div class="eyebrow">7-Day Free Trial</div>
     <h1>Your bag.<br />Your coach.<br /><span>Zero excuses.</span></h1>
     <p>BagTrainer calls out combos while you train on the heavy bag — Muay Thai, Boxing and Kickboxing — so you can train hands-free and build real muscle memory.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" id="download" href="https://play.google.com/store/apps/details?id=com.bagtrainer.app">
-        Coming Soon on Google Play
-      </a>
+    <div class="hero-actions" id="download">
+      <div class="store-badges">
+        <span class="store-badge is-soon" data-store="google-play">
+          <span class="store-badge-kicker">Coming soon on</span>
+          <span class="store-badge-name">Google Play</span>
+        </span>
+        <span class="store-badge is-soon" data-store="app-store">
+          <span class="store-badge-kicker">Coming soon on</span>
+          <span class="store-badge-name">the App Store</span>
+        </span>
+      </div>
       <a class="btn-secondary" href="#features">See how it works</a>
     </div>
-    <p class="hero-note">Launching soon · Free to start</p>
+    <p class="hero-note">Coming soon to Google Play and the App Store · Free to start</p>
   </div>
 </header>
 
@@ -83,17 +91,29 @@
       <p>Clean, focused screens built to stay out of your way once the round starts.</p>
     </div>
     <div class="showcase-grid">
-      <figure class="phone-frame">
-        <img src="/assets/screen-home.png" alt="BagTrainer home screen" loading="lazy" />
+      <figure class="showcase-step">
+        <div class="phone-frame">
+          <img src="/assets/screen-setup.png" width="480" height="1067" alt="Building a session: rounds, rest, combo gap and volume gap" loading="lazy" />
+        </div>
+        <figcaption class="phone-caption"><span>1</span> Set up</figcaption>
       </figure>
-      <figure class="phone-frame">
-        <img src="/assets/screen-live.png" alt="Live Muay Thai workout screen" loading="lazy" />
+      <figure class="showcase-step">
+        <div class="phone-frame">
+          <img src="/assets/screen-live.png" width="480" height="1067" alt="Active Muay Thai workout with the round timer and the current combo callout" loading="lazy" />
+        </div>
+        <figcaption class="phone-caption"><span>2</span> Train</figcaption>
       </figure>
-      <figure class="phone-frame">
-        <img src="/assets/screen-stats.png" alt="Workout stats screen" loading="lazy" />
+      <figure class="showcase-step">
+        <div class="phone-frame">
+          <img src="/assets/screen-stats.png" width="480" height="1067" alt="Stats overview with this week's workouts, streak and totals" loading="lazy" />
+        </div>
+        <figcaption class="phone-caption"><span>3</span> Track</figcaption>
       </figure>
-      <figure class="phone-frame">
-        <img src="/assets/screen-complete.png" alt="Workout complete screen" loading="lazy" />
+      <figure class="showcase-step">
+        <div class="phone-frame">
+          <img src="/assets/screen-complete.png" width="480" height="1067" alt="Workout complete summary with unlocked achievements" loading="lazy" />
+        </div>
+        <figcaption class="phone-caption"><span>4</span> Complete</figcaption>
       </figure>
     </div>
   </div>
@@ -102,19 +122,27 @@
 <section class="cta-band home-section">
   <div class="wrap">
     <h2>Ready to hit the bag?</h2>
-    <p>Start your 14-day free trial — full access to every combo, every sport, every mode.</p>
-    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.bagtrainer.app">
-      Coming Soon on Google Play
-    </a>
+    <p>Start your 7-day free trial — full access to every combo, every sport, every mode.</p>
+    <div class="store-badges">
+      <span class="store-badge is-soon" data-store="google-play">
+        <span class="store-badge-kicker">Coming soon on</span>
+        <span class="store-badge-name">Google Play</span>
+      </span>
+      <span class="store-badge is-soon" data-store="app-store">
+        <span class="store-badge-kicker">Coming soon on</span>
+        <span class="store-badge-name">the App Store</span>
+      </span>
+    </div>
   </div>
 </section>
 
 <footer class="home-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      BagTrainer &middot; bagtrainerapp@gmail.com
+      BagTrainer
     </div>
     <div class="footer-links">
+      <a href="/support">Support</a>
       <a href="/privacy">Privacy Policy</a>
       <a href="/terms">Terms of Use</a>
       <a href="/delete-account">Delete Account</a>
@@ -122,5 +150,7 @@
   </div>
 </footer>
 
+<script src="/assets/site-config.js"></script>
+<script src="/assets/store-badges.js"></script>
 </body>
 </html>

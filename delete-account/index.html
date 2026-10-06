@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Delete Account — BagTrainer</title>
+<link rel="icon" href="/assets/icon.png" />
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -74,7 +75,7 @@
   </div>
 
   <footer>
-    <a href="mailto:bagtrainerapp@gmail.com">Contact support</a> &middot; BagTrainer
+    <a href="/support">Contact support</a> &middot; BagTrainer
   </footer>
 </div>
 
@@ -104,7 +105,9 @@
         "Account email: " + email + "\n"
       );
 
-      window.location.href = "mailto:bagtrainerapp@gmail.com?subject=" + subject + "&body=" + body;
+      // Assembled here so the address is never shown on the page.
+      var to = ["bagtrainerapp", "gmail.com"].join("@");
+      window.location.href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
     });
 
     input.addEventListener("keydown", function (e) {
