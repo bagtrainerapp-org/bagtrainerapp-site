@@ -13,7 +13,7 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: 7 October 2026</p>
+  <p class="meta">Last updated: 9 October 2026</p>
 
   <p>BagTrainer ("the App") is developed and operated by an individual developer ("we," "us"). This Privacy Policy explains what information the App handles and how.</p>
 
@@ -25,7 +25,22 @@
 
   <p><strong>Account information, if you sign in.</strong> BagTrainer lets you optionally sign in with Google to back up your progress. If you do, we receive your Google account's email address and use it, together with a unique account identifier, to store and restore your backed-up workout data. Signing in is optional — the App is fully usable without it, and progress stays local-only until you choose to sign in.</p>
 
-  <p><strong>Leaderboard data.</strong> To support the App's leaderboard, an anonymous account identifier and your round counts are stored in our cloud database, whether or not you sign in. If you set a display name, it is stored alongside this identifier so it can be shown on the leaderboard. This does not include your name or email unless you've also signed in with Google.</p>
+  <p><strong>Leaderboard data.</strong> BagTrainer has a training leaderboard that ranks players by rounds completed (weekly, monthly and lifetime). To run it, the following is stored in our cloud database (provided by Supabase), linked to your anonymous or signed-in account identifier, whether or not you sign in:</p>
+  <ul>
+    <li>the round count of each workout you complete, used to calculate your leaderboard totals and rank;</li>
+    <li>the display name you choose in your profile, which is how you appear on the leaderboard;</li>
+    <li>your leaderboard visibility setting (<strong>Show me on the leaderboard</strong>);</li>
+    <li>the list of players you have blocked;</li>
+    <li>reports you submit about another player, which record your account identifier, the reported player, the display name being reported and the reason you chose.</li>
+  </ul>
+  <p>Other BagTrainer users who view the leaderboard can see your <strong>display name, your round totals and your rank</strong>. Your email address, date of birth, age range, gender, experience level, country, profile photo and account identifier are never shown to other players. You only appear on the leaderboard once you have set a display name.</p>
+  <p>You stay in control of your leaderboard presence:</p>
+  <ul>
+    <li><strong>Hide yourself.</strong> Turn off <strong>Show me on the leaderboard</strong> in the App's Settings screen to stop appearing in other players' leaderboard results. Your workouts and personal stats are not affected, and you can turn it back on at any time.</li>
+    <li><strong>Report a player.</strong> You can report another player's leaderboard entry (for example, for an inappropriate name or spam). Reports are reviewed by us and are not visible to other users.</li>
+    <li><strong>Block a player.</strong> You can block another player so they no longer appear on your leaderboard. Blocking only changes what you see; the blocked player is not notified, and your block list is not visible to anyone else.</li>
+  </ul>
+  <p><strong>Moderation.</strong> Display names are automatically checked against a list of offensive words, and names that fail this check are not shown on the leaderboard. We may also review reported names and hide, reject or remove inappropriate display names or leaderboard entries where needed to keep the leaderboard safe and appropriate.</p>
 
   <p><strong>Subscription and purchase information.</strong> If you purchase a BagTrainer Pro subscription, the transaction is processed by <strong>Google Play Billing</strong> (Android) or the <strong>Apple App Store</strong> (iPhone), and by <strong>RevenueCat</strong>, a subscription management service we use to verify purchases and manage entitlements. RevenueCat receives an anonymous device-linked identifier and your purchase/subscription status. It does not receive your name, email, or payment details — those are handled entirely by Google Play or Apple. See <a href="https://policies.google.com/privacy">Google Play's Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> and <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy Policy</a> for details on how each of them handles data.</p>
 
@@ -38,14 +53,14 @@
   </ul>
 
   <h2>How We Use Information</h2>
-  <p>Age range, gender and experience level are used only for aggregate audience statistics. Locally stored information (profile, workout history, favorites) is used solely to run the App's features on your device. If you sign in, your backed-up workout data and account identifier are used only to restore your progress across devices and to power the leaderboard. Subscription status received from RevenueCat is used only to unlock Pro features within the App.</p>
+  <p>Age range, gender and experience level are used only for aggregate audience statistics. Locally stored information (profile, workout history, favorites) is used solely to run the App's features on your device. If you sign in, your backed-up workout data and account identifier are used only to restore your progress across devices. Your completed-workout round counts and display name are used to calculate and show leaderboard rankings, and your visibility setting, block list and any reports are used only to operate and moderate the leaderboard. Subscription status received from RevenueCat is used only to unlock Pro features within the App.</p>
 
   <h2>Data Sharing</h2>
   <p>We do not sell, rent, or share your personal information with third parties for advertising or marketing purposes. Data is shared only with the service providers described in this policy — Supabase (cloud storage for backups and leaderboard), Google Play, Apple, RevenueCat, PostHog, and Sentry — solely to provide and improve the App's features.</p>
 
   <h2>Data Retention &amp; Deletion</h2>
   <p>If you never sign in, your profile, workout history, and favorites live only on your device, and uninstalling the App permanently deletes this data.</p>
-  <p>If you sign in with Google, your account and backed-up data are retained until you delete your account. This includes the age range, gender and experience level stored with your profile. You can delete your account and all associated cloud data at any time from <strong>Settings &rarr; Account &rarr; Delete Account</strong> in the App, or by visiting <a href="/delete-account">bagtrainerapp.com/delete-account</a> if you no longer have the App installed. Deletion is permanent and cannot be undone.</p>
+  <p>If you sign in with Google, your account and backed-up data are retained until you delete your account. This includes the age range, gender and experience level stored with your profile. You can delete your account and all associated cloud data at any time from <strong>Settings &rarr; Account &rarr; Delete Account</strong> in the App, or by visiting <a href="/delete-account">bagtrainerapp.com/delete-account</a> if you no longer have the App installed. Deleting your account also removes your leaderboard entry, your visibility setting, your block list, and any reports you made or that were made about you. Deletion is permanent and cannot be undone.</p>
   <p>To request information about or deletion of subscription-related data held by RevenueCat, contact us using the details below.</p>
 
   <h2>Children's Privacy</h2>
